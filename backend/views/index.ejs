@@ -1,0 +1,196 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-success text-white py-3">
+                    <h2 class="mb-0 text-center">🌱 SME ESG Assessment Portal</h2>
+                </div>
+                <div class="card-body p-4 p-md-5">
+                    <form id="esgForm">
+                        <div class="row g-3 mb-4">
+                            <h5 class="text-success border-bottom pb-2">Company Overview</h5>
+                            <div class="col-md-4">
+                                <label class="form-label fw-bold">Company Name</label>
+                                <input type="text" name="companyName" class="form-control" placeholder="e.g. Amelia Tech" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-bold">Industry Type</label>
+                                <select name="industry" class="form-select" required>
+                                    <option value="" disabled selected>Select Type</option>
+                                    <option value="Manufacturing">Manufacturing</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Retail">Retail</option>
+                                    <option value="Services">Services</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-bold">Annual Revenue (INR)</label>
+                                <input type="number" name="revenue" class="form-control" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-bold">Total Employees</label>
+                                <input type="number" name="total_employees" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <h5 class="text-primary border-bottom pb-2">Environmental (E)</h5>
+                            <div class="col-md-4">
+                                <label class="form-label">Total Energy (kWh)</label>
+                                <input type="number" name="energy_kwh" class="form-control" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Renewable Energy (kWh)</label>
+                                <input type="number" name="renewable_kwh" class="form-control" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Water Consumption (L)</label>
+                                <input type="number" name="water_liters" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Waste Generated (kg)</label>
+                                <input type="number" name="waste_kg" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Waste Recycled (kg)</label>
+                                <input type="number" name="recycled_kg" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <h5 class="text-primary border-bottom pb-2">Social (S)</h5>
+                            <div class="col-md-4">
+                                <label class="form-label">Female Employees</label>
+                                <input type="number" name="female_employees" class="form-control" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Disabled Employees</label>
+                                <input type="number" name="disabled_employees" class="form-control" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Safety Accidents (Count)</label>
+                                <input type="number" name="accidents" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Employees Trained (Count)</label>
+                                <input type="number" name="trained_count" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Harassment Complaints</label>
+                                <input type="number" name="complaints" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <h5 class="text-primary border-bottom pb-2">Governance (G)</h5>
+                            <div class="col-md-6">
+                                <label class="form-label">Sustainability Committee?</label>
+                                <select name="committee" class="form-select">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Regulatory Fines Paid (INR)</label>
+                                <input type="number" name="fines" class="form-control" required>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <label class="form-label fw-bold">Policies Implemented</label>
+                                <div class="row px-3">
+                                    <div class="col-md-4 form-check">
+                                        <input class="form-check-input" type="checkbox" name="policies" value="Environmental" id="p1">
+                                        <label class="form-check-label" for="p1">Environmental Policy</label>
+                                    </div>
+                                    <div class="col-md-4 form-check">
+                                        <input class="form-check-input" type="checkbox" name="policies" value="Anti-Corruption" id="p2">
+                                        <label class="form-check-label" for="p2">Anti-Corruption</label>
+                                    </div>
+                                    <div class="col-md-4 form-check">
+                                        <input class="form-check-input" type="checkbox" name="policies" value="Data Privacy" id="p3">
+                                        <label class="form-check-label" for="p3">Data Privacy</label>
+                                    </div>
+                                    <div class="col-md-4 form-check">
+                                        <input class="form-check-input" type="checkbox" name="policies" value="Whistleblower" id="p4">
+                                        <label class="form-check-label" for="p4">Whistleblower</label>
+                                    </div>
+                                    <div class="col-md-4 form-check">
+                                        <input class="form-check-input" type="checkbox" name="policies" value="Diversity" id="p5">
+                                        <label class="form-check-label" for="p5">Diversity & Inclusion</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <button type="submit" class="btn btn-success btn-lg px-5 shadow" id="submitBtn">Generate Report</button>
+                        </div>
+                    </form>
+
+                    <div id="resultsArea" class="mt-5 d-none border-top pt-4">
+                        <h3 class="text-center mb-4">ESG Scorecard</h3>
+                        <div class="row text-center g-4">
+                            <div class="col-md-12">
+                                <div class="display-1 fw-bold text-success" id="res_score">0</div>
+                                <p class="text-muted">Total Composite Score</p>
+                            </div>
+                        </div>
+                        <div class="alert alert-info mt-4">
+                            <h5>AI Recommendations:</h5>
+                            <ul id="recList" class="mb-0"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('esgForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.innerText = "Processing AI Analysis...";
+
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Correctly capture multiple policy checkboxes as an array
+        data.policies = formData.getAll('policies');
+
+        try {
+            const response = await fetch('/api/analyze', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                // Update UI from the Report model response
+                document.getElementById('res_score').innerText = result.report.total_esg_score;
+                
+                const list = document.getElementById('recList');
+                list.innerHTML = "";
+                result.report.ai_recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.innerText = rec;
+                    list.appendChild(li);
+                });
+
+                document.getElementById('resultsArea').classList.remove('d-none');
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            } else {
+                alert("Analysis Error: " + result.error);
+            }
+        } catch (err) {
+            alert("Could not connect to the backend server.");
+        } finally {
+            btn.disabled = false;
+            btn.innerText = "Generate Report";
+        }
+    });
+</script>
